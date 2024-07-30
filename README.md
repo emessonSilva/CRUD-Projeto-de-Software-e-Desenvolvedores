@@ -29,9 +29,3 @@ Este sistema de gerenciamento permite cadastrar, atualizar, listar e excluir pro
 
 8. **Excluir Desenvolvedor**:
    - Remove um desenvolvedor do sistema e atualiza todos os projetos para refletir a remoção.
-
-## Estrutura do Código
-
-- **`projects`**: Lista que armazena todos os projetos. Cada projeto é um dicionário com o formato:
-  ```python
-  {"id": "ID do Projeto", "nome": "Nome do Projeto", "desenvolvedores": [lista de desenvolvedores]}
