@@ -12,8 +12,11 @@ developers = []
 def registerProject():
     projectId = input("Digite o ID do projeto: ")
     name = input("Digite o nome do projeto: ")
-    projects.append({"id": projectId, "nome": name, "desenvolvedores": []})
-    print(f"Projeto '{name}' cadastrado com sucesso! ID do projeto: {projectId}")
+    description = input("Digite a descrição do projeto: ")
+    projects.append({"id": projectId, "nome": name, "descricao": description, "desenvolvedores": []})
+    print()
+    print(f"Projeto '{name}' cadastrado com sucesso.\nID do projeto: {projectId}.\nDescrição do projeto: {description}")
+    print()
 
 def registerDeveloper():
     developerId = input("Digite o ID do desenvolvedor: ")
@@ -35,6 +38,7 @@ def showProject():
     for project in projects:
         print(f"ID: {project['id']}")
         print(f"Nome: {project['nome']}")
+        print(f"Descrição: {project['descricao']}")  
         print("Desenvolvedores:")
         if project['desenvolvedores']:
             for dev in project['desenvolvedores']:
@@ -56,7 +60,9 @@ def updateProject():
     for project in projects:
         if project["id"] == projectId:
             newProjectName = input("Digite o novo nome do projeto: ")
+            newProjectDescription = input("Digite a nova descrição do projeto: ")  
             project["nome"] = newProjectName
+            project["descricao"] = newProjectDescription  
             print(f"Projeto ID {projectId} atualizado para '{newProjectName}' com sucesso!")
             return
     else:
@@ -138,4 +144,3 @@ while True:
         break
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")
-
